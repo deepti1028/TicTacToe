@@ -17,7 +17,6 @@ Array.from(cols).forEach((event) => {
     valueX = !valueX;
     if (count == 9) {
       alert("Match Draw");
-      flag = 1;
       location.reload();
     }
   });
@@ -39,7 +38,8 @@ let checkWinner = (row, col) => {
     }
 
     if (str == "XXX" || str == "OOO") {
-      alert("winner is " + str[0]);
+      let player = str[0] == "X" ? "Player 2" : "Player 1";
+      alert(player + " is winner🎉");
       location.reload();
     }
     str = "";
@@ -47,11 +47,12 @@ let checkWinner = (row, col) => {
 
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
-      if (maze[i][j] != ".") str += maze[j][i];
+      if (maze[j][i] != ".") str += maze[j][i];
     }
 
     if (str == "XXX" || str == "OOO") {
-      alert("winner is " + str[0]);
+      let player = str[0] == "X" ? "Player 2" : "Player 1";
+      alert(player + " is winner🎉");
       location.reload();
     }
     str = "";
@@ -61,18 +62,19 @@ let checkWinner = (row, col) => {
     if (maze[i][i] != ".") str += maze[i][i];
   }
   if (str == "XXX" || str == "OOO") {
-    alert("winner is " + str[0]);
+    let player = str[0] == "X" ? "Player 2" : "Player 1";
+    alert(player + " is winner🎉");
     location.reload();
   }
   str = "";
 
   for (let i = 0; i < 3; i++) {
-    for (let j = 2; j >= 0; j--) {
-      if (maze[i][j] != ".") str += maze[i][j];
-    }
+    let j = 2 - i;
+    if (maze[i][j] != ".") str += maze[i][j];
   }
   if (str == "XXX" || str == "OOO") {
-    alert("winner is " + str[0]);
+    let player = str[0] == "X" ? "Player 2" : "Player 1";
+    alert(player + " is winner🎉");
     location.reload();
   }
 };
