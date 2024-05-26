@@ -1,11 +1,13 @@
 let valueX = false;
-let row;
-let col;
+let row,
+  col,
+  count = 0;
 
 let cols = document.getElementsByClassName("col");
 
 Array.from(cols).forEach((event) => {
   event.addEventListener("click", (e) => {
+    count++;
     if (e.target.innerHTML !== "X" && e.target.innerHTML !== "O")
       e.target.innerHTML = valueX == true ? "X" : "O";
     row = e.target.className[7];
@@ -13,6 +15,11 @@ Array.from(cols).forEach((event) => {
     console.log(row, col);
     checkWinner(parseInt(row), parseInt(col));
     valueX = !valueX;
+    if (count == 9) {
+      alert("Match Draw");
+      flag = 1;
+      location.reload();
+    }
   });
 });
 
@@ -21,23 +28,23 @@ let maze = [
   [".", ".", "."],
   [".", ".", "."],
 ];
+
 let checkWinner = (row, col) => {
   maze[row][col] = valueX == true ? "X" : "O";
-  console.log(maze);
-  // console.log("row: ", row, " col: ", col);
   let str = "";
+
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       if (maze[i][j] != ".") str += maze[i][j];
     }
 
-    console.log("str is : ", str);
     if (str == "XXX" || str == "OOO") {
       alert("winner is " + str[0]);
+      location.reload();
     }
     str = "";
   }
-  str = "";
+
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       if (maze[i][j] != ".") str += maze[j][i];
@@ -45,14 +52,17 @@ let checkWinner = (row, col) => {
 
     if (str == "XXX" || str == "OOO") {
       alert("winner is " + str[0]);
+      location.reload();
     }
     str = "";
   }
+
   for (let i = 0; i < 3; i++) {
     if (maze[i][i] != ".") str += maze[i][i];
   }
   if (str == "XXX" || str == "OOO") {
     alert("winner is " + str[0]);
+    location.reload();
   }
   str = "";
 
@@ -63,5 +73,6 @@ let checkWinner = (row, col) => {
   }
   if (str == "XXX" || str == "OOO") {
     alert("winner is " + str[0]);
+    location.reload();
   }
 };
