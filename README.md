@@ -19,3 +19,6 @@ To run this game locally, follow these steps:
 3. Run the code on index.html.
 
 ## Screenshots
+<img width="551" alt="tic2" src="https://github.com/deepti1028/TicTacToe/assets/109272311/04c71dfb-0739-4500-bb17-eddc818292c5">
+<img width="551" alt="tic2" src="https://github.com/deepti1028/TicTacToe/assets/109272311/cc225959-8655-4940-8d09-adeb351b66c0">
+
