@@ -16,6 +16,9 @@ Array.from(col).forEach((event) => {
   });
 });
 
-// let checkWinner = (i,j)=>{
-
-// }
+let maze = [
+  [".", ".", "."],
+  [".", ".", "."],
+  [".", ".", "."],
+];
+let checkWinner = (i, j) => {};
