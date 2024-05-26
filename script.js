@@ -12,12 +12,13 @@ Array.from(cols).forEach((event) => {
       e.target.innerHTML = valueX == true ? "X" : "O";
     row = e.target.className[7];
     col = e.target.className[8];
-    console.log(row, col);
     checkWinner(parseInt(row), parseInt(col));
     valueX = !valueX;
     if (count == 9) {
-      alert("Match Draw");
-      location.reload();
+      setTimeout(() => {
+        alert("Match Draw");
+        location.reload();
+      }, 100);
     }
   });
 });
@@ -39,8 +40,10 @@ let checkWinner = (row, col) => {
 
     if (str == "XXX" || str == "OOO") {
       let player = str[0] == "X" ? "Player 2" : "Player 1";
-      alert(player + " is winner🎉");
-      location.reload();
+      setTimeout(() => {
+        alert(player + " is winner🎉");
+        location.reload();
+      }, 100);
     }
     str = "";
   }
@@ -52,8 +55,10 @@ let checkWinner = (row, col) => {
 
     if (str == "XXX" || str == "OOO") {
       let player = str[0] == "X" ? "Player 2" : "Player 1";
-      alert(player + " is winner🎉");
-      location.reload();
+      setTimeout(() => {
+        alert(player + " is winner🎉");
+        location.reload();
+      }, 100);
     }
     str = "";
   }
@@ -63,8 +68,10 @@ let checkWinner = (row, col) => {
   }
   if (str == "XXX" || str == "OOO") {
     let player = str[0] == "X" ? "Player 2" : "Player 1";
-    alert(player + " is winner🎉");
-    location.reload();
+    setTimeout(() => {
+      alert(player + " is winner🎉");
+      location.reload();
+    }, 100);
   }
   str = "";
 
@@ -74,7 +81,9 @@ let checkWinner = (row, col) => {
   }
   if (str == "XXX" || str == "OOO") {
     let player = str[0] == "X" ? "Player 2" : "Player 1";
-    alert(player + " is winner🎉");
-    location.reload();
+    setTimeout(() => {
+      alert(player + " is winner🎉");
+      location.reload();
+    }, 100);
   }
 };
