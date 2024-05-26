@@ -1,19 +1,21 @@
 let valueX = false;
+let i;
+let j;
 
 let col = document.getElementsByClassName("col");
-let row = document.getElementsByClassName("row");
 
-Array.from(col).forEach((e) => {
-  e.addEventListener("click", (e) => {
+Array.from(col).forEach((event) => {
+  event.addEventListener("click", (e) => {
     if (e.target.innerHTML !== "X" && e.target.innerHTML !== "O")
       e.target.innerHTML = valueX == true ? "X" : "O";
     valueX = !valueX;
-    checkWinner(row, col);
+    i = e.target.className[7];
+    j = e.target.className[8];
+    console.log(i, j);
+    checkWinner(i, j);
   });
 });
 
-// function checkWinner(row,col) {
-//     winner="";
+// let checkWinner = (i,j)=>{
 
-//     for( )
 // }
